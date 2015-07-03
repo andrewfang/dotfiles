@@ -1,16 +1,17 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'SuperTab'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree.git'
 
-execute pathogen#infect()
+call vundle#end()
 filetype plugin indent on
-syntax on
+syntax enable
+set background=light
 colorscheme solarized
-set clipboard=unnamed
 set showmatch
 set autoindent
 set smartindent
@@ -20,14 +21,14 @@ set backspace=2
 set mouse=a
 set incsearch
 set hlsearch
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
-filetype plugin on
-filetype indent on
 
 vmap > >gv
 vmap < <gv
 let mapleader=";"
+nmap <Leader>d :NERDTree<CR>
+nmap <Leader>s :set paste<CR>
 nmap <Leader>/ :nohl<CR>
 nmap <Leader>? :let @/ = ""<CR>
